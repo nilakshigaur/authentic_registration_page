@@ -1,1 +1,1 @@
-# authentic_registration_page
+# AUTHENTIC_REGISTRATION_SYSTEM
