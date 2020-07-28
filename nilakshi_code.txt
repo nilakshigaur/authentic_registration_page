@@ -1,12 +1,14 @@
+/*Create a Database and Table*/
 create database register;
 CREATE TABLE IF NOT EXISTS 'users' (
-id` int(11) NOT NULL AUTO_INCREMENT,
- `username` varchar(50) NOT NULL,
- `email` varchar(50) NOT NULL,
- `password` varchar(50) NOT NULL,
- `trn_date` datetime NOT NULL,
- PRIMARY KEY (`id`)
+ 'id' int(11) NOT NULL AUTO_INCREMENT,
+ 'username' varchar(50) NOT NULL,
+ 'email' varchar(50) NOT NULL,
+ 'password' varchar(50) NOT NULL,
+ 'trn_date' datetime NOT NULL,
+ PRIMARY KEY ('id')
  ); 
+ /*Connect To THE Database*/
  <!--PHP login System by WEBDEVTRICK (https://webdevtrick.com) -->
 <?php
 $con = mysqli_connect("localhost","root","","register");
@@ -15,6 +17,7 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 ?>
+//Create Authentication File 
 <!--PHP login System by WEBDEVTRICK (https://webdevtrick.com) -->
 <?php
 session_start();
@@ -22,6 +25,7 @@ if(!isset($_SESSION["username"])){
 header("Location: login.php");
 exit(); }
 ?>
+<!Create Registration Page>
 <!DOCTYPE html>
 <!--PHP login System by WEBDEVTRICK (https://webdevtrick.com) -->
 <html>
@@ -63,6 +67,7 @@ VALUES ('$username', '".md5($password)."', '$email', '$trn_date')";
 <?php } ?>
 </body>
 </html>
+<!Create Login Page>
 <!DOCTYPE html>
 <!--PHP login System by WEBDEVTRICK (https://webdevtrick.com) -->
 <html>
@@ -105,6 +110,7 @@ and password='".md5($password)."'";
 <?php } ?>
 </body>
 </html>
+<!Create an Index Page>
 <!--PHP login System by WEBDEVTRICK (https://webdevtrick.com) -->
 <?php
 include("auth.php");
@@ -125,6 +131,7 @@ include("auth.php");
 </div>
 </body>
 </html>
+<!Now Create a Dashboard Page>
 <!--PHP login System by WEBDEVTRICK (https://webdevtrick.com) -->
 <?php
 require('db.php');
@@ -146,6 +153,7 @@ include("auth.php");
 </div>
 </body>
 </html>
+<!Create Logout File>
 <!--PHP login System by WEBDEVTRICK (https://webdevtrick.com) -->
 <?php
 session_start();
@@ -154,6 +162,7 @@ if(session_destroy())
 header("Location: login.php");
 }
 ?>
+/*Give Style with CSS*/
 body {
   background: #2d343d;
 }
